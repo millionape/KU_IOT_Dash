@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Dash Board </title>
+  <style>
+        body {
+          text-align: center;
+        }
+  
+        #g1, #g2, #g3, #g4, #g5, #g6 {
+          width:200px; height:160px;
+          display: inline-block;
+          margin: 1em;
+        }
+  
+        p {
+          display: block;
+          width: 450px;
+          margin: 2em auto;
+          text-align: left;
+        }
+    </style>
+  <!-- Bootstrap core CSS 22-->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">DashBoard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">UserManual</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <div class="card mt-5 mx-auto" style="width:1090px">
+    <div class="card-header">
+        <h4 class="card-title">Device <%= device %> | Node1</h4>
+    </div>
+    <div class="card-body">
+        <div id="g1"></div>
+        <div id="g2"></div>
+    </div> 
+    </div>
+    <div class="card mt-5 mx-auto" style="width:1090px">
+        <div class="card-header">
+            <h4 class="card-title">Device <%= device %> | Node2</h4>
+        </div>
+        <div class="card-body">
+            <div id="g3"></div>
+            <div id="g4"></div>
+        </div> 
+    </div>
+  <br>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; KITTAPHORN 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="js/raphael-2.1.4.min.js"></script>
+    <!--<script src="../justgage-1.0.1.js"></script>-->
+    <script src="js/justgage.js"></script>
+    <script>
+    var val = '<%- device %>';
+    // var x= document.getElementById("g1").innerText
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var g1,g2,g3,g4;
+      var g1 = new JustGage({
+        id: "g1",
+        value: val*12,
+        min: 0,
+        max: 100,
+        title: "Custom Width",
+        label: "",
+        gaugeWidthScale: 0.2
+      });
+      var g1 = new JustGage({
+        id: "g2",
+        value: val*5,
+        min: 0,
+        max: 100,
+        title: "Custom Width",
+        label: "",
+        gaugeWidthScale: 0.2
+      });
+      var g3 = new JustGage({
+        id: "g3",
+        value: val*10,
+        min: 0,
+        max: 100,
+        title: "Custom Width",
+        label: "",
+        gaugeWidthScale: 0.2
+      });
+      var g4 = new JustGage({
+        id: "g4",
+        value: val*20,
+        min: 0,
+        max: 100,
+        title: "Custom Width",
+        label: "",
+        gaugeWidthScale: 0.2
+      });
+    });
+    </script>
+</body>
+
+</html>

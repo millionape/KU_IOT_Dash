@@ -1,0 +1,17 @@
+/*!
+ * Start Bootstrap - Full Width Pics (https://startbootstrap.com/template-overviews/full-width-pics)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-width-pics/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.bg-image-full {
+  background: no-repeat center center scroll;
+  -webkit-background-size: 1900px 1080px;
+  -moz-background-size: 1900px 1080px;
+  background-size: 1900px 1080px;
+  -o-background-size: 1900px 1080px;
+  /* background-size: 1900px 1080px; */
+}
