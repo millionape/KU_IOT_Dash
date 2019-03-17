@@ -4,9 +4,13 @@ var request = require('request');
 /* GET users listing. */
 router.get('/', function(req ,res) {
     var id = req.query.id
+    var nid_1 = req.query.nid_1
+    var nid_2 = req.query.nid_2
     console.log(id);
     res.render('dash', {
-      device : id
+      device : id,
+      node1 : nid_1,
+      node2 : nid_2
     });
 });
 router.get('/getdata', function(req ,res) {

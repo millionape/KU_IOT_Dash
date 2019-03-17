@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost/employee')
 var dash = require('./routes/dash');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var history = require('./routes/history');
 var employees = require('./routes/employees');
 
 var app = express();
@@ -28,10 +29,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
 app.use('/', index);
 app.use('/dash', dash);
+app.use('/history', history);
 // app.use('/users', users);
 // app.use('/employees', employees);
 

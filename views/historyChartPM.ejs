@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chart.js demo</title>
+    <!-- import plugin script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="../../chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
+</head>
+
+<body>
+    <!-- line chart canvas element -->
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>
+                <%- labelTxt %>
+            </h3>
+        </div>
+        <div class="card-body">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+    <!-- pie chart canvas element -->
+    <script>
+        const ctx = document.getElementById('chart1').getContext('2d');
+        const data = {
+            // Labels should be Date objects
+            labels: [<%- labelArr %>],
+            datasets: [{
+                    fill: false,
+                    label: "PM10",
+                    data: [<%- pm10 %>],
+                    borderColor: '#FFC300',
+                    borderWidth: 1.7,
+                    backgroundColor: '#FFC300',
+                    lineTension: 0.2,
+                    pointRadius: 1,
+                    pointHoverRadius: 5
+                },
+                {
+                    fill: false,
+                    label: "PM2.5",
+                    data: [<%- pm25 %>],
+                    borderColor: '#85C1E9',
+                    borderWidth: 1.7,
+                    backgroundColor: '#85C1E9',
+                    lineTension: 0.2,
+                    pointRadius: 1,
+                    pointHoverRadius: 5
+                },
+                {
+                    fill: false,
+                    label: "PM1",
+                    data: [<%- pm1 %>],
+                    borderColor: '#DAF7A6',
+                    borderWidth: 1.7,
+                    backgroundColor: '#DAF7A6',
+                    lineTension: 0.2,
+                    pointRadius: 1,
+                    pointHoverRadius: 5
+                }
+            ]
+        }
+        const options = {
+            type: 'line',
+            data: data,
+            options: {
+                fill: false,
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        type: 'time',
+                        time: {
+                            //format: 'YYYY-MM-DD HH:mm Z'
+                            displayFormats: {
+                                quarter: 'MMM YYYY'
+                            }
+                        },
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Date",
+                        }
+
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            suggestedMax: 500,
+                            suggestedMin: 0,
+                            beginAtZero: true,
+                        },
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: "<%- labelTxt %>",
+                        }
+                    }]
+                },
+                plugins: {
+                    zoom: {
+                        pan: {
+                            enabled: true,
+                            mode: 'xy'
+                        },
+                        zoom: {
+                            enabled: true,
+                            mode: 'x'
+                        }
+                    }
+                }
+            }
+        }
+        const chart = new Chart(ctx, options);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
