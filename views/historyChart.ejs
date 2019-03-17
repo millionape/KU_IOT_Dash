@@ -26,7 +26,9 @@
             </h3>
         </div>
         <div class="card-body">
-            <canvas id="chart1"></canvas>
+            <div style="height: 350px">
+                <canvas id="chart1"></canvas>
+            </div>
         </div>
     </div>
     <!-- pie chart canvas element -->
@@ -58,7 +60,7 @@
             options: {
                 fill: false,
                 responsive: true,
-                maintainAspectRatio: false,
+                
                 scales: {
                     xAxes: [{
                         type: 'time',
