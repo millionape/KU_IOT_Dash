@@ -172,7 +172,7 @@ function node1Get(gid, nid1, nid2) {
                         }
                     },
                     error: function () {
-                        if(confirm("Error no value from server.")) document.location = '/';
+                        //if(confirm("Error no value from server.")) document.location = '/';
 
                         console.log('ERROR')
                         //g1.refresh(-1);
@@ -232,7 +232,7 @@ function node1Get(gid, nid1, nid2) {
                                     'Status :raining')
                             }
                         } catch (err) {
-                            if(confirm("Error no value from server.")) document.location = '/';
+                            //if(confirm("Error no value from server.")) document.location = '/';
                             console.log(err.message);
                         }
                     },
