@@ -47,6 +47,7 @@ router.get('/get/pm', function(req ,res) {
     var _id = req.query.id
     var _limit = req.query.limit
     var _labelTxt = req.query.label
+    var _chartmax = req.query.chartmax
     request('http://119.59.116.171:8080/values?id='+_id+'&gid='+_gid+'&limit='+_limit, function (error, response, body) {
       if (!error && response.statusCode == 200) {
           data = JSON.parse(body); // you missed that...
@@ -70,7 +71,8 @@ router.get('/get/pm', function(req ,res) {
             pm25 : pm25Arr,
             pm10 : pm10Arr,
             labelTxt : _labelTxt,
-            labelArr : label
+            labelArr : label,
+            chartmax : _chartmax
         });
       }
     });

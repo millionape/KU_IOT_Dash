@@ -40,33 +40,33 @@
                     label: "PM10",
                     data: [<%- pm10 %>],
                     borderColor: '#FFC300',
-                    borderWidth: 1.7,
+                    borderWidth: 2,
                     backgroundColor: '#FFC300',
                     lineTension: 0.2,
-                    pointRadius: 1,
-                    pointHoverRadius: 5
+                    pointRadius: 5,
+                    pointHoverRadius: 8
                 },
                 {
                     fill: false,
                     label: "PM2.5",
                     data: [<%- pm25 %>],
-                    borderColor: '#85C1E9',
-                    borderWidth: 1.7,
-                    backgroundColor: '#85C1E9',
+                    borderColor: '#0000CD',
+                    borderWidth: 2,
+                    backgroundColor: '#0000CD',
                     lineTension: 0.2,
-                    pointRadius: 1,
-                    pointHoverRadius: 5
+                    pointRadius: 5,
+                    pointHoverRadius: 8
                 },
                 {
                     fill: false,
                     label: "PM1",
                     data: [<%- pm1 %>],
-                    borderColor: '#DAF7A6',
-                    borderWidth: 1.7,
-                    backgroundColor: '#DAF7A6',
+                    borderColor: '#FF0000',
+                    borderWidth: 2,
+                    backgroundColor: '#FF0000',
                     lineTension: 0.2,
-                    pointRadius: 1,
-                    pointHoverRadius: 5
+                    pointRadius: 5,
+                    pointHoverRadius: 8
                 }
             ]
         }
@@ -95,7 +95,7 @@
                     }],
                     yAxes: [{
                         ticks: {
-                            suggestedMax: 300,
+                            suggestedMax: <%- chartmax %>,
                             suggestedMin: 0,
                             beginAtZero: true,
                         },
