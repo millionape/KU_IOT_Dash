@@ -26,7 +26,7 @@
             </h3>
         </div>
         <div class="card-body">
-            <div style="height: 350px">
+            <div style="height: 600px">
                 <canvas id="chart1"></canvas>
             </div>
         </div>
@@ -39,6 +39,7 @@
                 .toDate();
         }
         const ctx = document.getElementById('chart1').getContext('2d');
+        
         const data = {
             // Labels should be Date objects
             labels: [<%- labelArr %>],
@@ -60,7 +61,7 @@
             options: {
                 fill: false,
                 responsive: true,
-                
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
                         type: 'time',
