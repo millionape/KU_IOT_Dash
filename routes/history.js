@@ -26,7 +26,7 @@ router.get('/get', function(req ,res) {
         for(var i = 0; i < data.length; i++) {
             //label.push(data[i].dt.toString());
             //var thTime = new Date(data[i].dt)
-            label.push("'"+new Date(data[i].dt).toISOString()+"'");
+            label.push("'"+new Date(data[i].dt)+"'");
             dataArr.push(data[i][_prefix]);
             //console.log(JSON.stringify(airTempArr));
         }
