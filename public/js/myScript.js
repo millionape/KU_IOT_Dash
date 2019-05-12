@@ -127,7 +127,9 @@ function node1Get(gid, nid1, nid2) {
                         "&id=" + nid1,
                     success: function (data) {
                         try {
-                            $('#last_update').text("Last update :" + data[0].dt);
+                            var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
+                            console.log("time is :"+new Date(thTime));
+                            $('#last_update').text("Last update :" + new Date(thTime));
                             n1_airtemp.refresh(data[0].airTemp);
                             n1_airhumid.refresh(data[0].airHumid);
                             n1_wind.refresh(data[0].wind);
@@ -191,7 +193,9 @@ function node1Get(gid, nid1, nid2) {
                         "&id=" + nid2,
                     success: function (data) {
                         try {
-                            $('#last_update2').text("Last update :" + data[0].dt);
+                            var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
+                            console.log("time is :"+new Date(thTime));
+                            $('#last_update2').text("Last update :" + new Date(thTime));
                             n2_airtemp.refresh(data[0].airTemp);
                             n2_airhumid.refresh(data[0].airHumid);
                             n2_wind.refresh(data[0].wind);
