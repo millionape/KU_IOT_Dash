@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@chenfengyuan/datepicker": "^1.0.7",
     "body-parser": "^1.18.3",
     "chartjs-plugin-zoom": "^0.7.0",
     "cookie-parser": "~1.4.3",
@@ -16,5 +17,8 @@
     "morgan": "^1.9.1",
     "request": "^2.88.0",
     "serve-favicon": "^2.5.0"
+  },
+  "engines": {
+    "node": "10.15.x"
   }
 }
