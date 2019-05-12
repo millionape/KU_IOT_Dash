@@ -12,9 +12,10 @@ mongoose.connect('mongodb://localhost/employee')
   .catch((err) => console.error(err));
 var dash = require('./routes/dash');
 var index = require('./routes/index');
-var users = require('./routes/users');
+var allHis = require('./routes/allHistory');
+//var users = require('./routes/users');
 var history = require('./routes/history');
-var employees = require('./routes/employees');
+//var employees = require('./routes/employees');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', index);
 app.use('/dash', dash);
 app.use('/history', history);
+app.use('/allhistory',allHis);
 // app.use('/users', users);
 // app.use('/employees', employees);
 

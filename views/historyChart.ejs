@@ -18,15 +18,42 @@
 </head>
 
 <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="/">Kasetsart IoT Environment Monitoring System</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">UserManual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
     <!-- line chart canvas element -->
-    <div class="card">
+    <div class="card" style="margin-top: 55px">
         <div class="card-header text-center">
             <h3>
                 <%- labelTxt %>
             </h3>
         </div>
         <div class="card-body">
-            <div style="height: 500px;margin-left: 50px;margin-right: 50px">
+            <div style="height: 470px;margin-left: 50px;margin-right: 50px">
                 <canvas id="chart1"></canvas>
             </div>
         </div>
@@ -113,5 +140,11 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="py-5 bg-dark mx-auto">
+        <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; KITTAPHORN 2019</p>
+        </div>
+        <!-- /.container -->
+      </footer>
 
 </html>

@@ -11,7 +11,8 @@ router.get('/', function(req ,res) {
     if (!error && response.statusCode == 200) {
       data = JSON.parse(body);
       //console.log(body) // Show the HTML for the Google homepage. 
-      res.render('home',{lastUpdate : data[0].dt});
+      var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
+      res.render('home',{lastUpdate : new Date(thTime)});
     }
   });
 });

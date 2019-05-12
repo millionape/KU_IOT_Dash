@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dash Board </title>
+    <style>
+        .card {
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 10px;
+            /* Added */
+        }
+
+        .dropdown-menu {
+            width: 400px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            /* height: 400px !important; */
+        }
+
+        body {
+            text-align: center;
+        }
+
+        #g1,
+        #g2,
+        #g3,
+        #g4,
+        #g5,
+        #g6 {
+            width: 200px;
+            height: 160px;
+            display: inline-block;
+            margin: 1em;
+        }
+
+        p {
+            display: block;
+            width: 450px;
+            margin: 2em auto;
+            text-align: left;
+        }
+    </style>
+
+    <meta charset="utf-8" />
+    <title>Chart.js demo</title>
+    <!-- import plugin script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="../chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Kasetsart IoT Environment Monitoring System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">UserManual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card" style="margin-top: 55px">
+            <div class="card-header">
+              History result of [ Gateway:<%- gid %> , NodeID:<%- nid %> ]
+            </div>
+            <div class="card-body">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        Air temperature
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartTemp"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        Air humidity
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartHumid"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        Soil humidity
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartSoilHumid"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        Wind speed
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartWind"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        PM1
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartPM1"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        PM1
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartPM25"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        PM1
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartPM10"></canvas>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div class="card" style="width: 700px; height: 400px;">
+                    <div class="card-header">
+                        PM1
+                    </div>
+                    <div style="height: 500px;margin-left: 30px;margin-right: 30px">
+                        <canvas id="chartRain"></canvas>
+                    </div>
+                </div>
+            </tr>
+                
+        </tbody>
+    </table>
+</div>
+</div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mx-auto">
+            <div class="container">
+              <p class="m-0 text-center text-white">Copyright &copy; KITTAPHORN 2019</p>
+            </div>
+            <!-- /.container -->
+          </footer>
+    <script>
+        function renderChart(datas, labels, chartID, color ,cmax , cmin) {
+            var ctx = document.getElementById(chartID).getContext('2d');
+            const dataChart = {
+                labels: [ <%- labelArr %> ],
+                datasets: [{
+                    fill: false,
+                    label: labels,
+                    data: datas,
+                    borderColor: color,
+                    borderWidth: 2.4,
+                    backgroundColor: color,
+                    lineTension: 0.2,
+                    pointRadius: 1,
+                    pointHoverRadius: 5
+                }]
+            }
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: dataChart,
+                options: {
+                    fill: false,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                            time: {
+                                //format: 'YYYY-MM-DD HH:mm Z',
+                                displayFormats: {
+                                    quarter: 'MMM YYYY'
+                                }
+                            },
+                            ticks: {
+                                maxRotation: 0
+                            },
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: labels,
+                            }
+
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                suggestedMax: cmax,
+                                suggestedMin: cmin,
+                                beginAtZero: true,
+                            },
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Temp",
+                            }
+                        }]
+                    },
+                    plugins: {
+                        zoom: {
+                            pan: {
+                                enabled: true,
+                                mode: 'xy'
+                            },
+                            zoom: {
+                                enabled: true,
+                                mode: 'x'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        var tempArr = [];
+        var humidArr = [];
+        var soilArr = [];
+        var windArr = [];
+        var pm1Arr = [];
+        var pm25Arr = [];
+        var pm10Arr = [];
+        var rainArr = [];
+        var uvArr = []; 
+        <% jsonData.forEach(function (dat) { %>
+            tempArr.push( <%=dat.airTemp%> );
+            humidArr.push( <%=dat.airHumid%> );
+            soilArr.push( <%=dat.soilHumid%> );
+            windArr.push( <%= dat.wind %> );
+            pm1Arr.push( <%= dat.pm1 %> );
+            pm25Arr.push( <%= dat.pm25 %> );
+            pm10Arr.push( <%= dat.pm10 %> );
+            rainArr.push( <%= dat.rain %> );
+            uvArr.push( <%= dat.uv %> ); 
+        <% }); %>
+
+        renderChart(tempArr, "Air temperature", "chartTemp", "#fe8b36",100,0);
+        renderChart(humidArr, "Air humidity", "chartHumid", "#85C1E9",100,0);
+        renderChart(soilArr,"Soil humidity","chartSoilHumid","#fe8b36",100,0);
+        renderChart(windArr, "Wind speed", "chartWind", "#85C1E9",30,0);
+        renderChart(pm1Arr,"PM1","chartPM1","#fe8b36",500,0);
+        renderChart(pm25Arr,"PM2.5","chartPM25","#85C1E9",500,0);
+        renderChart(pm10Arr,"PM10","chartPM10","#fe8b36",500,0);
+        renderChart(rainArr,"Rain","chartRain","#85C1E9",1,0);
+        
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/raphael-2.1.4.min.js"></script>
+    <!--<script src="../justgage-1.0.1.js"></script>-->
+    <script src="js/justgage.js"></script>
+</body>
+
+
+</html>
