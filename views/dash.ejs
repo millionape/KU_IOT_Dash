@@ -10,6 +10,30 @@
 
     <title>Dash Board </title>
     <style>
+        @media (max-width: 700px) {
+            .navbar.navbar-fixed-top{
+                width: 100px !important;
+                margin:0px auto;
+                left:0;
+                right:0;
+                padding:0;
+            }
+            .navbar-brand{
+                font-size: 0.8em !important;
+            }
+            html{
+                margin: 0;
+                padding: 0;
+                width: 100px !important;
+                text-align: center;
+                display: flex;
+            /* use min-height 100 vh instead of height to allow extended height with large content */
+            }
+        
+        
+        }
+
+
         .dropdown-menu {
             width: 400px !important;
             padding-left: 20px !important;
@@ -90,7 +114,7 @@
     </nav>
     <br>
     <br>
-    <div class="card mt-5 mx-auto border-secondary" style="width:1090px">
+    <div class="card mt-5 mx-auto border-secondary" style="width:100%;">
         <div class="card-header">
             <div class=float-right>
                 <ul class="nav nav-pills card-header-pills ">
@@ -229,7 +253,7 @@
         </div>
 
     </div>
-    <div class="card mt-5 mx-auto border-secondary" style="width:1090px">
+    <div class="card mt-5 mx-auto border-secondary" style="width:100%">
         <div class="card-header">
                 <div class=float-right>
                         <ul class="nav nav-pills card-header-pills ">
@@ -373,7 +397,7 @@
     <br>
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark mx-auto">
+    <footer class="py-5 bg-dark mx-auto" style="width: 100%;">
             <div class="container">
               <p class="m-0 text-center text-white">Copyright &copy; KITTAPHORN 2019</p>
             </div>
