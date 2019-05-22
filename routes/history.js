@@ -18,7 +18,7 @@ router.get('/get', function(req ,res) {
   var _prefix = req.query.prefix
   var chartMin = req.query.chartMin
   var chartMax = req.query.chartMax
-  request('http://119.59.116.171:8080/values?id='+_id+'&gid='+_gid+'&limit='+_limit, function (error, response, body) {
+  request('http://119.59.116.183:8080/values?id='+_id+'&gid='+_gid+'&limit='+_limit, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         data = JSON.parse(body); // you missed that...
         label = [];
@@ -48,7 +48,7 @@ router.get('/get/pm', function(req ,res) {
     var _limit = req.query.limit
     var _labelTxt = req.query.label
     var _chartmax = req.query.chartmax
-    request('http://119.59.116.171:8080/values?id='+_id+'&gid='+_gid+'&limit='+_limit, function (error, response, body) {
+    request('http://119.59.116.183:8080/values?id='+_id+'&gid='+_gid+'&limit='+_limit, function (error, response, body) {
       if (!error && response.statusCode == 200) {
           data = JSON.parse(body); // you missed that...
           label = [];

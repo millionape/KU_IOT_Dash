@@ -16,7 +16,7 @@ router.get('/', function(req ,res) {
 router.get('/getdata', function(req ,res) {
   var _gid = req.query.gid
   var _id = req.query.id
-  request('http://119.59.116.171:8080/values?id='+_id+'&gid='+_gid+'&limit=1', function (error, response, body) {
+  request('http://119.59.116.183:8080/values?id='+_id+'&gid='+_gid+'&limit=1', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       //console.log(body) // Show the HTML for the Google homepage. 
       res.send(body);
