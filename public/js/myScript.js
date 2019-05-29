@@ -35,9 +35,10 @@ function node1Get(gid, nid1, nid2) {
         });
         var n1_wind = new JustGage({
             id: "n1_wind",
+            decimals: 2,
             value: 0,
             min: 0,
-            max: 200,
+            max: 30,
             title: "Wind Speed",
             label: "(m/s)",
             gaugeWidthScale: 0.2
@@ -95,9 +96,10 @@ function node1Get(gid, nid1, nid2) {
         });
         var n2_wind = new JustGage({
             id: "n2_wind",
+            decimals: 2,
             value: 0,
             min: 0,
-            max: 200,
+            max: 30,
             title: "Wind Speed",
             label: "(m/s)",
             gaugeWidthScale: 0.2
