@@ -16,7 +16,7 @@ router.get('/', function(req ,res) {
             var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
             //console.log(body) // Show the HTML for the Google homepage. 
             //var thTime2 = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
-            res.render('home',{lastUpdate : new Date(thTime) , lastUpdate2 : new Date(2018, 11, 24)});
+            res.render('home',{lastUpdate2 : new Date(thTime) , lastUpdate : "not found"});
           }
         });
         //res.render('home',{lastUpdate : new Date(thTime) , lastUpdate2 : new Date()});
