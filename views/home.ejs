@@ -18,6 +18,10 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="js/homeUpdatedTime.js"></script>
+    <script>
+        initHome();
+    </script>
   <style>
     @media (max-width: 700px) {
       .navbar.navbar-fixed-top{
@@ -107,27 +111,27 @@
                 <tbody>
                     <tr>
                         <td><a href="/dash?id=55&nid_1=51&nid_2=53" class="btn btn-success btn-lg" role="button" aria-pressed="true">Gateway1</a></td>
-                        <td>Online</td>
-                        <td><%= lastUpdate %></td>
+                        <td id="online1" style="color: red">Offline</td>
+                        <td id="update1">not found</td>
                     </tr>
                     <tr>
                         <td><a href="/dash?id=83&nid_1=31&nid_2=32" class="btn btn-success btn-lg" role="button" aria-pressed="true">Gateway2</a></td>
-                        <td>Online</td>
-                        <td><%= lastUpdate2 %></td>
+                        <td id="online2"> Online</td>
+                        <td id="update2">not found</td>
                     </tr>
                     <tr>
                         <td><a href="/dash?id=84&nid_1=41&nid_2=42" class="btn btn-success btn-lg" role="button" aria-pressed="true">Gateway3</a></td>
-                        <td>Online</td>
-                        <td>......</td>
+                        <td id="online3">Online</td>
+                        <td id="update3">not found</td>
                     </tr>
                     <tr>
                         <td><a href="/dash?id=55&nid_1=5555&nid_2=5556" class="btn btn-success btn-lg" role="button" aria-pressed="true">Gateway4</a></td>
-                        <td>Offline</td>
+                        <td id="online4" style="color: red">Offline</td>
                         <td>......</td>
                     </tr>
                     <tr>
                         <td><a href="/dash?id=55&nid_1=5555&nid_2=5556" class="btn btn-success btn-lg" role="button" aria-pressed="true">Gateway5</a></td>
-                        <td>Offline</td>
+                        <td id="online5" style="color: red">Offline</td>
                         <td>......</td>
                     </tr>
                     
