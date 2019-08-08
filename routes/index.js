@@ -13,7 +13,7 @@ router.get('/', function(req ,res) {
     request('http://119.59.125.170:8080/values?id='+_id31+'&gid='+_gid83+'&limit=1', function (error, response, body) {
           if (!error && response.statusCode == 200) {
             data = JSON.parse(body);
-            var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
+            //var thTime = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
             //console.log(body) // Show the HTML for the Google homepage. 
             //var thTime2 = data[0].dt.toLocaleString("en-US", {timeZone: "asia/bangkok"});
             //res.render('home',{lastUpdate2 : new Date(thTime) , lastUpdate : "not found"});
