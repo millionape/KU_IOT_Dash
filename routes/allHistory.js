@@ -10,7 +10,7 @@ router.get('/', function(req ,res) {
     // var nid_1 = req.query.nid_1
     // var nid_2 = req.query.nid_2
     // console.log(id);
-    request('http://119.59.116.183:8080/values?id='+nid+'&gid='+gid+'&limit='+numberOfQuery, function (error, response, body) {
+    request('http://119.59.125.170:8080/values?id='+nid+'&gid='+gid+'&limit='+numberOfQuery, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             data = JSON.parse(body); // you missed that...
             label = [];

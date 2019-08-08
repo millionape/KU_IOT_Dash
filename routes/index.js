@@ -5,8 +5,8 @@ var request = require('request');
 /* GET home page. */
 
 router.get('/', function(req ,res) {
-  var _gid83 = 83
-  var _id31 = 31
+  var _gid83 = 84
+  var _id31 = 41
   var _gid = 55
   var _id = 51
   try{

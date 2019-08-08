@@ -5,14 +5,14 @@ import json
 from random import seed
 from random import randint
 
-HOST = '119.59.116.171'
+HOST = '119.59.125.170'
 PORT = 2888
 BUFSIZE = 128
 ADDR = (HOST,PORT)
 
 udpCliSock = socket(AF_INET,SOCK_DGRAM)
 
-json_data = '{"id":"5555","airTemp":"70","airHumid":"10","pm1":"30","pm25":"200","pm10":"100","rain":"0","uv":"0.40","soilHumid":"80","wind":"20","gid":"55"}'
+json_data = '{"id":"31","airTemp":"70","airHumid":"10","pm1":"30","pm25":"200","pm10":"100","rain":"0","uv":"0.40","soilHumid":"80","wind":"20","gid":"83"}'
 python_obj = json.loads(json_data)
 while True:
     try:
