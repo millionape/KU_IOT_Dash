@@ -24,6 +24,9 @@ function node1Get(gid, nid1, nid2) {
             relativeGaugeSize: true,
             donut: true
         });
+        ////////
+        $('#n1_uv').hide()
+        /////////
         var n1_soil = new JustGage({
             id: "n1_soil",
             value: 0,
@@ -85,6 +88,7 @@ function node1Get(gid, nid1, nid2) {
             relativeGaugeSize: true,
             donut: true
         });
+        $('#n2_uv').hide()
         var n2_soil = new JustGage({
             id: "n2_soil",
             value: 0,
@@ -137,6 +141,7 @@ function node1Get(gid, nid1, nid2) {
                             n1_wind.refresh(data[0].wind);
                             n1_soil.refresh(data[0].soilHumid);
                             n1_uv.refresh(data[0].uv);
+                            $('#n1_uv').hide()
                             var current_progress = data[0].pm1;
                             $("#pm1_bar")
                                 .css("width", current_progress)

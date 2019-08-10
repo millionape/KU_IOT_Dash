@@ -8,8 +8,12 @@ router.get('/', function(req ,res) {
     var gid = req.query.gid
     var fromDate = req.query.fdate
     var toDate = req.query.tdate
-    console.log(fromDate);
+    console.log("from :::");
+    console.log(typeof fromDate);
     console.log(toDate);
+    if(!fromDate.trim() || !toDate.trim()){
+      res.render("errorDisplay",{message:"Date incorrect\nPlease choose the right date."});
+    }else{
     request('http://119.59.125.170:8080/dateFind?id='+nid+'&gid='+gid+'&limit='+numberOfQuery+"&fdate="+fromDate+"&tdate="+toDate, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             data = JSON.parse(body); // you missed that...
@@ -28,10 +32,13 @@ router.get('/', function(req ,res) {
             jsonData : data,
             labelArr : label,
             nid : nid,
-            gid : gid
+            gid : gid,
+            fdate:fromDate,
+            tdate:toDate
           });
         }
       });
+    }
     // res.render('nodeAllHistory', {
     //     gatewayID : gid,
     //     queryNumber : numberOfQuery,

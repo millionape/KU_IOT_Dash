@@ -70,6 +70,7 @@
     <script src="js/myScript.js"></script>
     <script>
         node1Get( <%= device %> , <%= node1 %> , <%= node2 %> );
+        
     </script>
     <!-- Custom styles for this template -->
     <!-- <link href="css/full-width-pics.css" rel="stylesheet"> -->
@@ -124,7 +125,7 @@
                             History
                         </button>
                         <div class="dropdown-menu">
-                            <h5> Please type numbers of query.</h5>
+                            <h5> Please select date range.</h5>
                             <form action="/allhistory">
                                 <form class="dropdown-menu p-4">
                                     <div class="form-group">
@@ -172,7 +173,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n1_airtemp"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=AirTemperature&prefix=airTemp&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -181,7 +182,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n1_airhumid"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=AirHumidity&prefix=airHumid&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -189,7 +190,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n1_soil"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=SoilHumidity&prefix=soilHumid&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -197,7 +198,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n1_wind"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=WindSpeed&prefix=wind&chartMin=0&chartMax=30"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -250,8 +251,8 @@
                 <div class="column">
                     <div class="card_cus h-100">
                         <div id="n1_uv"></div>
-                        <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=UVintensity&prefix=uv&chartMin=0.0&chartMax=3.0"
-                            class="btn btn-outline-info" role="button">Quick History</a>
+                        <!-- <a href="history/get?gid=<%= device %>&id=<%= node1 %>&limit=70&label=UVintensity&prefix=uv&chartMin=0.0&chartMax=3.0"
+                            class="btn btn-outline-info" role="button">Quick History</a> -->
                     </div>
                 </div>
                 <div class="column">
@@ -311,7 +312,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n2_airtemp"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=AirTemperature&prefix=airTemp&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -320,7 +321,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n2_airhumid"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=AirHumidity&prefix=airHumid&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -328,7 +329,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n2_soil"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=SoilHumidity&prefix=soilHumid&chartMin=0&chartMax=120"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -336,7 +337,7 @@
                 <div class="column">
                     <div class="card_cus">
                         <div id="n2_wind"></div>
-                        <p>Some text</p>
+                        <!-- <p>Some text</p> -->
                         <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=WindSpeed&prefix=wind&chartMin=0&chartMax=30"
                             class="btn btn-outline-info" role="button">Quick History</a>
                     </div>
@@ -389,8 +390,8 @@
                 <div class="column">
                     <div class="card_cus h-100">
                         <div id="n2_uv"></div>
-                        <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=UVintensity&prefix=uv&chartMin=0.0&chartMax=3.0"
-                            class="btn btn-outline-info" role="button">Quick History</a>
+                        <!-- <a href="history/get?gid=<%= device %>&id=<%= node2 %>&limit=70&label=UVintensity&prefix=uv&chartMin=0.0&chartMax=3.0"
+                            class="btn btn-outline-info" role="button">Quick History</a> -->
                     </div>
                 </div>
                 <div class="column">
