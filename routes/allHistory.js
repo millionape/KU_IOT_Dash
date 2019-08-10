@@ -6,11 +6,11 @@ router.get('/', function(req ,res) {
     var numberOfQuery = req.query.queryNumber
     var nid = req.query.nid
     var gid = req.query.gid
-    // var id = req.query.id
-    // var nid_1 = req.query.nid_1
-    // var nid_2 = req.query.nid_2
-    // console.log(id);
-    request('http://119.59.125.170:8080/values?id='+nid+'&gid='+gid+'&limit='+numberOfQuery, function (error, response, body) {
+    var fromDate = req.query.fdate
+    var toDate = req.query.tdate
+    console.log(fromDate);
+    console.log(toDate);
+    request('http://119.59.125.170:8080/dateFind?id='+nid+'&gid='+gid+'&limit='+numberOfQuery+"&fdate="+fromDate+"&tdate="+toDate, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             data = JSON.parse(body); // you missed that...
             label = [];
